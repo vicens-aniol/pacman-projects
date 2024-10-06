@@ -25,26 +25,26 @@ See the autograder tutorial in Project 0 for more information about using the au
 The code for this project consists of several Python files, some of which you will need to read and understand in order to complete the assignment, and some of which you can ignore. You can download all the code and supporting files as a zip archive.
 
 **Files you'll edit:**<br/>
-[search.py]()	Where all of your search algorithms will reside.<br/>
-[search_agents.py]() Where all of your search-based agents will reside. <br/>
+[search.py](https://github.com/aig-upf/pacman-projects/blob/main/search/search.py)	Where all of your search algorithms will reside.<br/>
+[search_agents.py](https://github.com/aig-upf/pacman-projects/blob/main/search/search_agents.py) Where all of your search-based agents will reside. <br/>
 
 **Files you might want to look at:** <br/>
-[pacman.py]()	The main file that runs Pacman games. This file describes a Pacman GameState type, which you use in this project.<br/>
-[game.py]()	The logic behind how the Pacman world works. This file describes several supporting types like AgentState, Agent, Direction, and Grid.<br/>
-[util.py]()	Useful data structures for implementing search algorithms.<br/>
+[pacman.py](https://github.com/aig-upf/pacman-projects/blob/main/search/pacman.py)	The main file that runs Pacman games. This file describes a Pacman GameState type, which you use in this project.<br/>
+[game.py](https://github.com/aig-upf/pacman-projects/blob/main/search/game.py)	The logic behind how the Pacman world works. This file describes several supporting types like AgentState, Agent, Direction, and Grid.<br/>
+[util.py](https://github.com/aig-upf/pacman-projects/blob/main/search/util.py)	Useful data structures for implementing search algorithms.<br/>
 
 **Supporting files you can ignore:**<br/>
-[graphics_display.py]()	Graphics for Pacman<br/>
-[graphics_utils.py]()	Support for Pacman graphics<br/>
-[text_display.py]()	ASCII graphics for Pacman<br/>
-[ghost_agents.py]()	Agents to control ghosts<br/>
-[keyboard_agents.py]()	Keyboard interfaces to control Pacman<br/>
-[layout.py]()	Code for reading layout files and storing their contents<br/>
-[autograder.py]()	Project autograder<br/>
-[test_parser.py]()	Parses autograder test and solution files<br/>
-[test_classes.py]()	General autograding test classes<br/>
-[test_cases/]()	Directory containing the test cases for each question<br/>
-[search_test_classes.py]()	Project 1 specific autograding test classes<br/>
+[graphics_display.py](https://github.com/aig-upf/pacman-projects/blob/main/search/graphics_display.py)	Graphics for Pacman<br/>
+[graphics_utils.py](https://github.com/aig-upf/pacman-projects/blob/main/search/graphics_utils.py)	Support for Pacman graphics<br/>
+[text_display.py](https://github.com/aig-upf/pacman-projects/blob/main/search/text_display.py)	ASCII graphics for Pacman<br/>
+[ghost_agents.py](https://github.com/aig-upf/pacman-projects/blob/main/search/ghost_agents.py)	Agents to control ghosts<br/>
+[keyboard_agents.py](https://github.com/aig-upf/pacman-projects/blob/main/search/keyboard_agents.py)	Keyboard interfaces to control Pacman<br/>
+[layout.py](https://github.com/aig-upf/pacman-projects/blob/main/search/layout.py)	Code for reading layout files and storing their contents<br/>
+[autograder.py](https://github.com/aig-upf/pacman-projects/blob/main/search/autograder.py)	Project autograder<br/>
+[test_parser.py](https://github.com/aig-upf/pacman-projects/blob/main/search/test_parser.py)	Parses autograder test and solution files<br/>
+[test_classes.py](https://github.com/aig-upf/pacman-projects/blob/main/search/test_classes.py)	General autograding test classes<br/>
+[test_cases/](https://github.com/aig-upf/pacman-projects/blob/main/search/test_cases/README.md)	Directory containing the test cases for each question<br/>
+[search_test_classes.py](https://github.com/aig-upf/pacman-projects/blob/main/search/search_test_classes.py)	Project 1 specific autograding test classes<br/>
 
 **Files to Edit and Submit:** You will fill in portions of search.py and search_agents.py during the assignment. You should submit these files with your code and comments. Please do not change the other files in this distribution or submit any of our original files other than these files.
 
