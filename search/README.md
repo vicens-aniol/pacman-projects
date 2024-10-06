@@ -57,7 +57,7 @@ The code for this project consists of several Python files, some of which you wi
 **Discussion:** Please be careful not to post spoilers.
 
 ### Welcome to Pacman
-After downloading the code ([search.zip]()), unzipping it, and changing to the directory, you should be able to play a game of Pacman by typing the following at the command line:
+After downloading the code ([pacman-projects-main.zip](https://github.com/aig-upf/pacman-projects/archive/refs/heads/main.zip)), unzipping it, and changing to the `search` directory, you should be able to play a game of Pacman by typing the following at the command line:
 
 `python pacman.py`
 
