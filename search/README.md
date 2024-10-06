@@ -1,9 +1,9 @@
 # Project 1: Search
-From the content in the original website about [search](https://ai.berkeley.edu/search.html) project.
+From the content in the original website related to the [search](https://ai.berkeley.edu/search.html) project.
 
 ### Table of Contents
 * [Introduction](#introduction)
-* [Welcome](#welcome)
+* [Welcome](#welcome-to-pacman)
 * [Q1: Depth First Search](#question-1-3-points-finding-a-fixed-food-dot-using-depth-first-search)
 * [Q2: Breadth First Search](#question-2-3-points-breadth-first-search)
 * [Q3: Uniform Cost Search](#question-3-3-points-varying-the-cost-function)
