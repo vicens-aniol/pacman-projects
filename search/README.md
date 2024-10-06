@@ -1,10 +1,5 @@
-This an updated version of the PacMan framework from [_UC Berkeley CS188 Intro to AI -- Course Materials_](https://ai.berkeley.edu/search.html) 
-which runs in Python3.8.6. 
-
-The next describes the [search](https://ai.berkeley.edu/search.html) and 
-[multiagent]() projects with minor modifications for version compatibility.
-
 # Project 1: Search
+From the content in the original website about [search](https://ai.berkeley.edu/search.html) project.
 
 ### Table of Contents
 * [Introduction](#introduction)
