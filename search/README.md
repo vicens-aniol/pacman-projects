@@ -43,7 +43,7 @@ The code for this project consists of several Python files, some of which you wi
 [autograder.py](https://github.com/aig-upf/pacman-projects/blob/main/search/autograder.py)	Project autograder<br/>
 [test_parser.py](https://github.com/aig-upf/pacman-projects/blob/main/search/test_parser.py)	Parses autograder test and solution files<br/>
 [test_classes.py](https://github.com/aig-upf/pacman-projects/blob/main/search/test_classes.py)	General autograding test classes<br/>
-[test_cases/](https://github.com/aig-upf/pacman-projects/blob/main/search/test_cases/README.md)	Directory containing the test cases for each question<br/>
+[test_cases/](https://github.com/aig-upf/pacman-projects/tree/main/search/test_cases)	Directory containing the test cases for each question<br/>
 [search_test_classes.py](https://github.com/aig-upf/pacman-projects/blob/main/search/search_test_classes.py)	Project 1 specific autograding test classes<br/>
 
 **Files to Edit and Submit:** You will fill in portions of search.py and search_agents.py during the assignment. You should submit these files with your code and comments. Please do not change the other files in this distribution or submit any of our original files other than these files.
