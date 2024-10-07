@@ -1,5 +1,5 @@
 # Project 2: Multiagent
-From the content in the original website related to the [search](https://ai.berkeley.edu/search.html) project.
+From the content in the original website related to the [multiagent](https://ai.berkeley.edu/multiagent.html) project.
 
 ### Table of Contents
 * [Introduction](#introduction)
