@@ -4,11 +4,11 @@ From the content in the original website related to the [search](https://ai.berk
 ### Table of Contents
 * [Introduction](#introduction)
 * [Welcome](#multi-agent-pacman)
-* [Q1: Reflex Agent]()
-* [Q2: Minimax]()
-* [Q3: Alpha-Beta Pruning]()
-* [Q4: Expectimax]()
-* [Q5: Evaluation Function]()
+* [Q1: Reflex Agent](#question-1-4-points-reflex-agent)
+* [Q2: Minimax](#question-2-5-points-minimax)
+* [Q3: Alpha-Beta Pruning](#question-3-5-points-alpha-beta-pruning)
+* [Q4: Expectimax](#question-4-5-points-expectimax)
+* [Q5: Evaluation Function](#question-5-6-points-evaluation-function)
 
 ![PacmanMultiagent](./img/pacman_multi_agent.png "pacman_multiagent")
 <center>Pacman, now with ghosts.<br/>Minimax, Expectimax, Evaluation.</center>
