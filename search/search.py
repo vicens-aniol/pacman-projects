@@ -133,19 +133,131 @@ def depth_first_search(problem):
     print("Start's successors:", problem.get_successors(problem.get_start_state()))
     """
     "*** YOUR CODE HERE ***"
-    util.raise_not_defined()
+    # initialize a stack to manage nodes to explore
+    frontier = util.Stack()
+    # retrieve the starting state from the problem
+    start_state = problem.get_start_state()
+    # create the initial node with no parent and starting state
+    initial_node = SearchNode(None, (start_state, None, 0))
+    # push the initial node onto the stack
+    frontier.push(initial_node)
+    # list to keep track of visited states
+    expanded = []
 
+    # loop until the stack is empty
+    while not frontier.is_empty():
+        # pop a node from the stack
+        current_node = frontier.pop()
+        current_state = current_node.state
+        # check if the current state is the goal
+        if problem.is_goal_state(current_state):
+            # return the path to the goal
+            return current_node.get_path()
+        # check if the state has been visited
+        if current_state not in expanded:
+            # add the state to the closed list
+            expanded.append(current_state)
+            # get successors of the current state
+            successors = problem.get_successors(current_state)
+            # iterate over each successor
+            for successor in successors:
+                next_state, action, cost = successor
+                # check if the successor state has been visited
+                if next_state not in expanded:
+                    # create a new search node
+                    child_node = SearchNode(current_node, (next_state, action, cost))
+                    # push the child node onto the stack
+                    frontier.push(child_node)
+
+    # return an empty list if no solution is found
+    return []
 
 
 def breadth_first_search(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raise_not_defined()
+
+    # create a queue to manage nodes to explore
+    frontier = util.Queue()
+    # get the starting state from the problem
+    starting_state = problem.get_start_state()
+    # create the initial search node without a parent
+    initial_node = SearchNode(None, (starting_state, None, 0))
+    # enqueue the initial node
+    frontier.push(initial_node)
+    # list to keep track of visited states
+    expanded = []
+
+    # loop until there are no nodes left to explore
+    while not frontier.is_empty():
+        # dequeue a node from the front of the queue
+        current_node = frontier.pop()
+        current_state = current_node.state
+        # check if the current state is the goal
+        if problem.is_goal_state(current_state):
+            # return the path from the start state to the goal
+            return current_node.get_path()
+        # if the state hasn't been visited yet
+        if current_state not in expanded:
+            # add the state to the list of visited states
+            expanded.append(current_state)
+            # get the successors of the current state
+            successors = problem.get_successors(current_state)
+
+            # iterate over each successor
+            for successor_state, action, step_cost in successors:
+                # if the successor state hasn't been visited
+                if successor_state not in expanded:
+                    # create a new search node with the successor state
+                    child_node = SearchNode(current_node, (successor_state, action, step_cost))
+                    # enqueue the child node to the exploration queue
+                    frontier.push(child_node)
+
+    # return an empty list if no solution is found
+    return []
 
 def uniform_cost_search(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raise_not_defined()
+
+    # create a priority queue to manage nodes to explore
+    frontier_queue = util.PriorityQueue()
+    # get the starting state from the problem
+    starting_state = problem.get_start_state()
+    # create the initial search node without a parent
+    initial_node = SearchNode(None, (starting_state, None, 0))
+    # enqueue the initial node with its cost as the priority
+    frontier_queue.push(initial_node, initial_node.cost)
+    # dictionary to keep track of visited states and their costs
+    expanded = {}
+
+    # loop until there are no nodes left to explore
+    while not frontier_queue.is_empty():
+        # dequeue the node with the lowest cost
+        current_node = frontier_queue.pop()
+        current_state = current_node.state
+        # check if the current state is the goal
+        if problem.is_goal_state(current_state):
+            # return the path from the start state to the goal
+            return current_node.get_path()
+        # if the state hasn't been visited or found a cheaper path
+        if current_state not in expanded or current_node.cost < expanded[current_state]:
+            # update the cost for the current state
+            expanded[current_state] = current_node.cost
+            # get the successors of the current state
+            successors = problem.get_successors(current_state)
+            # iterate over each successor
+            for successor_state, action, step_cost in successors:
+                # calculate the cumulative cost to reach the successor
+                cumulative_cost = current_node.cost + step_cost
+                # create a new search node with the successor state
+                child_node = SearchNode(current_node, (successor_state, action, step_cost))
+                child_node.cost = cumulative_cost
+                # enqueue the child node with its cumulative cost as priority
+                frontier_queue.push(child_node, cumulative_cost)
+
+    # return an empty list if no solution is found
+    return []
 
 def null_heuristic(state, problem=None):
     """
@@ -155,9 +267,53 @@ def null_heuristic(state, problem=None):
     return 0
 
 def a_star_search(problem, heuristic=null_heuristic):
-    """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    util.raise_not_defined()
+    """
+    performs A* search to find the optimal path to the goal using the provided heuristic.
+    """
+    # create a priority queue to manage nodes to explore
+    frontier_queue = util.PriorityQueue()
+    # get the starting state from the problem
+    starting_state = problem.get_start_state()
+    # create the initial search node without a parent
+    initial_node = SearchNode(None, (starting_state, None, 0))
+    # calculate the heuristic value for the starting state
+    heuristic_value = heuristic(starting_state, problem)
+
+    # enqueue the initial node with its total estimated cost as priority
+    frontier_queue.push(initial_node, initial_node.cost + heuristic_value)
+    # dictionary to keep track of visited states and their costs
+    # loop until there are no nodes left to explore
+    expanded = {}
+    
+    while not frontier_queue.is_empty():
+        # dequeue the node with the lowest estimated total cost
+        current_node = frontier_queue.pop()
+        current_state = current_node.state
+        # check if the current state is the goal
+        if problem.is_goal_state(current_state):
+            # return the path from the start state to the goal
+            return current_node.get_path()
+        # if the state hasn't been visited or found a cheaper path
+        if current_state not in expanded or current_node.cost < expanded[current_state]:
+            # update the cost for the current state
+            expanded[current_state] = current_node.cost
+            # get the successors of the current state
+            successors = problem.get_successors(current_state)
+            # iterate over each successor
+            for successor_state, action, step_cost in successors:
+                # calculate the cumulative cost to reach the successor
+                cumulative_cost = current_node.cost + step_cost
+                # calculate the heuristic value for the successor state
+                heuristic_value = heuristic(successor_state, problem)
+                # calculate the total estimated cost f(n) = g(n) + h(n)
+                total_estimated_cost = cumulative_cost + heuristic_value
+                # create a new search node with the successor state
+                child_node = SearchNode(current_node, (successor_state, action, step_cost))
+                child_node.cost = cumulative_cost
+                # enqueue the child node with its total estimated cost as priority
+                frontier_queue.push(child_node, total_estimated_cost)
+    # return an empty list if no solution is found
+    return []
 
 # Abbreviations
 bfs = breadth_first_search

@@ -531,9 +531,37 @@ def food_heuristic(state, problem):
     problem.heuristic_info['wallCount']
     """
     position, food_grid = state
-    "*** YOUR CODE HERE ***"
-    return 0
 
+    # convert the food grid to a list of food positions
+    food_positions = food_grid.as_list()
+    # if there's no food left, return zero as the heuristic value
+    if not food_positions:
+        return 0
+    # initialize variables to find the nearest food
+    minimum_distance = float('inf')
+    closest_food = None
+    # loop over all food positions to find the closest one
+    for food in food_positions:
+        # calculate the manhattan distance from current location to the food
+        distance = util.manhattan_distance(position, food)
+        # update the minimum distance and closest food if a shorter distance is found
+        if distance < minimum_distance:
+            minimum_distance = distance
+            closest_food = food
+    # initialize variable to find the farthest food from the closest food
+    maximum_distance = 0
+
+    # loop over all food positions to find the farthest one from the closest food
+    for food in food_positions:
+        # calculate the manhattan distance from the closest food to this food
+        distance = util.manhattan_distance(closest_food, food)
+        # update the maximum distance if a longer distance is found
+        if distance > maximum_distance:
+            maximum_distance = distance
+    # calculate the heuristic value as the sum of minimum and maximum distances
+    heuristic_value = minimum_distance + maximum_distance
+    # return the heuristic value
+    return heuristic_value
 
 def simplified_corners_heuristic(state, problem):
     """
